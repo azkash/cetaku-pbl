@@ -1,0 +1,176 @@
+/* product.css - Styling untuk halaman daftar produk */
+
+/* Card Produk */
+.product-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-bottom: 20px;
+    height: 100%;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+}
+
+.product-card .card-title {
+    margin-bottom: 0;
+    font-weight: 600;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 70%;
+}
+
+.product-card .card-body {
+    padding: 15px;
+}
+
+.product-card .card-img-top {
+    height: 180px;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+/* Badge status produk */
+.badge-available {
+    background-color: #28a745;
+    color: white;
+}
+
+.badge-limited {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.badge-unavailable {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Filter dan pencarian */
+.filter-container {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.search-box {
+    max-width: 300px;
+}
+
+.search-box .input-group {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.search-box .form-control {
+    border-right: none;
+}
+
+.search-box .btn {
+    border-left: none;
+    background-color: white;
+}
+
+/* Animasi loading saat filter */
+.loading-overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-overlay.active {
+    display: flex;
+}
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive tweaks */
+@media (max-width: 767.98px) {
+    .product-card .card-img-top {
+        height: 150px;
+    }
+
+    .product-actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .product-actions .btn {
+        margin: 5px;
+        flex: 1;
+        min-width: 80px;
+    }
+}
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.empty-state i {
+    font-size: 50px;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.empty-state h4 {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.empty-state p {
+    color: #777;
+    max-width: 500px;
+    margin: 0 auto 20px;
+}
+
+/* Kategori tags */
+.category-tag {
+    display: inline-block;
+    padding: 4px 8px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #495057;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
