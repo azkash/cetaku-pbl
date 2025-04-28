@@ -7,6 +7,8 @@ use App\Http\Controllers\CustomController;
 use App\Http\Controllers\UkuranController;
 use App\Http\Controllers\JenisController;
 use App\Http\Controllers\BahanController;
+use App\Http\Controllers\AddressController;;
+use App\Http\Controllers\EkspedisiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,4 +33,6 @@ Route::apiResource('customs', CustomController::class);
 Route::apiResource('ukuran', UkuranController::class)->except(['update']);
 Route::apiResource('jenis', JenisController::class)->except(['update']);
 Route::apiResource('bahan', BahanController::class)->except(['update']);
+Route::apiResource('address', AddressController::class);
+Route::apiResource('ekspedisis', EkspedisiController::class);
 
